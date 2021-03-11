@@ -18,7 +18,7 @@ export default async(req, res) => {
   // Run cors
   await cors(req, res)
 
-  const response = await fire.firestore().collection('comments').doc(req.body.id).update({isApproved: true})
+  const response = await fire.firestore().collection('comments').doc(req.query.id).update({isApproved: true})
   
   res.status(200).json('ok')
 }

@@ -19,7 +19,7 @@ export default async(req, res) => {
 
   const response = await fire.firestore().collection('comments')
     .where('path', '==', req.body.path)
-    .where('isApproved', true)
+    .where('isApproved', '==', true)
     .orderBy('date')
     .get()
   const docs = response.docs.map(doc=>doc.data())

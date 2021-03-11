@@ -20,5 +20,5 @@ export default async(req, res) => {
 
   const response = await fire.firestore().collection('comments').doc(req.query.id).update({isApproved: true})
   
-  res.status(200).json('ok')
+  res.status(200).json(`Comment with id:${req.query.id} has been approved`)
 }

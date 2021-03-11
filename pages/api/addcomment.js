@@ -37,15 +37,15 @@ export default async(req, res) => {
       to: "ivan@hrex.eu",
       subject: "Comment to approve",
       html: `
-          <p>Nowy komentarz do posta pod adresem:</p>
+          <p>There is new comment for article with adress:</p>
           <p>http://dyktighandverker.no${data.path}</p>
-          <p>Imię:</p>
+          <p>Name:</p>
           <p>${data.name}</p>
           <p>E-mail</p>
           <p>${data.email}</p>
-          <p>Komentarz:</p>
+          <p>Comment:</p>
           <p>${data.comment}</p>
-          <a href='https://gh-comments-api.vercel.app/api/approvecomment?id=${writeResult.id}'>aby zatwierdzić ten komentarz, kliknij tutaj</a>
+          <a href='https://gh-comments-api.vercel.app/api/approvecomment?id=${writeResult.id}'>To approve this comment click here</a>
       `
   };
 

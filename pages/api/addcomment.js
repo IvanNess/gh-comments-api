@@ -34,7 +34,7 @@ export default async(req, res) => {
 
   const message = {
       from: "chai@bk.ru",
-      to: ["ivan@hrex.eu", "ivanspursic@gmail.com"],
+      to: ["ivan@hrex.eu", "martyna@dyktighandverker.no"],
       subject: "Comment to approve",
       html: `
           <p>There is new comment for article with adress:</p>

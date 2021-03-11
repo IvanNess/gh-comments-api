@@ -45,7 +45,7 @@ export default async(req, res) => {
           <p>${data.email}</p>
           <p>Komentarz:</p>
           <p>${data.comment}</p>
-          <a href='https://us-central1-dyktighandverker-blog.cloudfunctions.net/approvecomment?id=${writeResult.id}'>aby zatwierdzić ten komentarz, kliknij tutaj</a>
+          <a href='https://gh-comments-api.vercel.app/api/approvecomment?id=${writeResult.id}'>aby zatwierdzić ten komentarz, kliknij tutaj</a>
       `
   };
 

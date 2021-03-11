@@ -17,7 +17,11 @@ export default async(req, res) => {
   // Run cors
   await cors(req, res)
 
-  const response = await fire.firestore().collection('comments').where('path', '==', req.body.path).get()
+  const response = await fire.firestore().collection('comments')
+    .where('path', '==', req.body.path)
+    .where('isApproved', true)
+    .orderBy('date')
+    .get()
   const docs = response.docs.map(doc=>doc.data())
   console.log('docs', docs)
   res.status(200).json({comments: docs})

@@ -1,7 +1,4 @@
-import NextCors from 'nextjs-cors';
 import initMiddleware from '../../init-middleware';
-const mongoose = require('mongoose')
-const PackageSchema = require('../../mongo-models/package-model')
 
 const cors = initMiddleware(
     // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options

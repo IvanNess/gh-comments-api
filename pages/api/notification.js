@@ -44,7 +44,7 @@ export default async(req, res) => {
     //     // optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     //  });
 
-    console.log('notification req', req)
+    console.log('notification req', req.headers)
 
     try {
         // await cors(req, res)

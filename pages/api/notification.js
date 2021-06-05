@@ -17,7 +17,7 @@ export default async(req, res) => {
     console.log('notification req', req.body)
 
     try {
-        // await cors(req, res)
+        await cors(req, res)
 
         console.log('after cors', )
 

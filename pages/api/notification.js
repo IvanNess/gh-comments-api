@@ -2,6 +2,23 @@ import initMiddleware from '../../init-middleware';
 import Cors from 'cors'
 import NextCors from 'nextjs-cors';
 
+const cors = Cors({
+        credentials: true,
+        origin: "http://clubelo.com",
+})
+
+function runMiddleware(req, res, fn) {
+    return new Promise((resolve, reject) => {
+      fn(req, res, (result) => {
+        if (result instanceof Error) {
+          return reject(result)
+        }
+  
+        return resolve(result)
+      })
+    })
+  }
+
 // const cors = initMiddleware(
 //     // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
 //     Cors({
@@ -14,12 +31,14 @@ import NextCors from 'nextjs-cors';
 
 export default async(req, res) => {
 
-    await NextCors(req, res, {
-        // Options
-        // methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-        origin: "http://clubelo.com",
-        // optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-     });
+    await runMiddleware(req, res, cors)
+
+    // await NextCors(req, res, {
+    //     // Options
+    //     // methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    //     origin: "http://clubelo.com",
+    //     // optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    //  });
 
     console.log('notification req', req)
 

@@ -6,8 +6,8 @@ const cors = initMiddleware(
     Cors({
         // origin: process.env.ORIGIN,
         // credentials: true
-        origin: false
-        // origin: "http://clubelo.com",
+        // origin: false
+        origin: "http://clubelo.com",
     })
 )
 

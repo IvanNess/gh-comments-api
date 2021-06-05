@@ -31,7 +31,11 @@ function runMiddleware(req, res, fn) {
 
 export default async(req, res) => {
 
-    await runMiddleware(req, res, cors)
+    try {
+        await runMiddleware(req, res, cors)
+    } catch (error) {
+        return res.status(500)
+    }
 
     // await NextCors(req, res, {
     //     // Options

@@ -6,10 +6,8 @@ const cors = initMiddleware(
     Cors({
         // origin: process.env.ORIGIN,
         // credentials: true
-        //   origin: false
-        origin: "http://clubelo.com",
-        credentials: true,
-        methods: ["GET"]
+        origin: false
+        // origin: "http://clubelo.com",
     })
 )
 
@@ -17,7 +15,7 @@ export default async(req, res) => {
     console.log('notification req', req)
 
     try {
-        // await cors(req, res)
+        await cors(req, res)
 
         console.log('after cors', )
 

@@ -5,6 +5,7 @@ import NextCors from 'nextjs-cors';
 const cors = Cors({
         credentials: true,
         origin: "http://clubelo.com",
+        preflightContinue: true
 })
 
 function runMiddleware(req, res, fn) {

@@ -1,4 +1,5 @@
 import initMiddleware from '../../init-middleware';
+import Cors from 'cors'
 
 const cors = initMiddleware(
     // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
